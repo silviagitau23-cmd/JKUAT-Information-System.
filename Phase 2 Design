@@ -1,1 +1,123 @@
+# JKUAT Information System
+
+## Phase 2: System Design
+
+### 1. Introduction
+
+This phase presents the design of the proposed JKUAT Information System. The design shows how the system will be organized, how users will interact with it, how information will flow, and how the different system components will work together.
+
+### 2. System Architecture
+
+The system will consist of the following main components:
+
+* **Student Module**
+* **Lecturer Module**
+* **Student Portal**
+* **Learning Management System (LMS)**
+* **Database**
+
+The Student Portal will handle student unit registration and provide access to student academic information. The LMS will allow lecturers to manage learning materials, assessments, and marks.
+
+The database will store relevant student, lecturer, unit, assessment, and marks information.
+
+### 3. Student Module Design
+
+The Student Module will allow students to:
+
+* Register units through the official Student Portal.
+* View registered units.
+* Access learning materials through the LMS.
+* View assignments and CATs.
+* View their academic scores.
+
+### 4. Lecturer Module Design
+
+The Lecturer Module will allow lecturers to:
+
+* Upload or manage notes.
+* Create assignments.
+* Create CATs.
+* Manage examinations.
+* Enter marks.
+* Grade assignments, CATs, and examinations.
+
+### 5. Information Flow Design
+
+The system will coordinate information between the Student Portal and LMS.
+
+**Unit Registration:**
+
+Student → Student Portal → Register Units → Database → LMS
+
+The units registered by a student through the official Student Portal will be made available in the LMS.
+
+**Marks:**
+
+Lecturer → LMS → Enter Marks → Database → Student Portal
+
+Marks entered by the lecturer through the LMS will be stored and made available through the official Student Portal for students to view.
+
+### 6. Database Design
+
+The proposed system will require data entities such as:
+
+* Student
+* Lecturer
+* Unit
+* Registration
+* Assignment
+* CAT
+* Examination
+* Marks
+
+These entities will be related to one another to allow the system to store and retrieve academic information efficiently.
+
+### 7. User Interface Design
+
+The system will provide interfaces for the main users.
+
+#### Student Interface
+
+The student interface will provide options such as:
+
+* Login
+* Unit Registration
+* Registered Units
+* LMS
+* Assignments
+* CATs
+* Examination Results
+* View Scores
+
+#### Lecturer Interface
+
+The lecturer interface will provide options such as:
+
+* Login
+* Manage Notes
+* Manage Assignments
+* Manage CATs
+* Manage Examinations
+* Enter Marks
+* View Student Performance
+
+### 8. Security Design
+
+The system will use user authentication to ensure that students and lecturers access only the functions intended for their roles.
+
+Students should only be able to access their own academic information, while lecturers should be able to manage academic information for the units they teach.
+
+### 9. Proposed System Components
+
+ Component       | Main Function                                      
+
+ Student Portal   Unit registration and viewing academic information 
+ LMS              Learning materials, assessments and marks          
+ Student Module   Student access to academic services                
+ Lecturer Module  Lecturer management of learning and assessments    
+ Database         Storage of system information                      
+
+### 10. Conclusion
+
+The system design provides a structure for implementing the JKUAT Information System. It defines the major modules, information flow, database requirements, user interfaces, and security controls. This design will guide the programming phase of the project.
 
