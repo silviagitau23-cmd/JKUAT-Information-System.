@@ -1,1 +1,174 @@
+# JKUAT Information System
+
+## Phase 1: System Analysis
+
+### 1. Introduction
+
+JKUAT is developing an Information System to store, control, and coordinate information and activities involving students, lecturers, and other university staff.
+
+The proposed system will connect the Student Portal and Learning Management System (LMS) to improve the management and sharing of academic information. The system will be developed using C++ and will contain modules for lecturers and students.
+
+### 2. Problem Statement
+
+The current separation between the official Student Portal and the Learning Management System can make it difficult to maintain consistent academic information.
+
+Students register their units through the official portal, while lecturers enter marks through the LMS. The registered units and marks therefore need to be transferred or synchronized between the two systems so that the same information is available to the appropriate users.
+
+The proposed JKUAT Information System will help coordinate these activities and ensure that academic information is stored and accessed consistently.
+
+### 3. General Objective
+
+To develop a JKUAT Information System using C++ that stores, controls, and coordinates student and lecturer academic information between the Student Portal and the Learning Management System.
+
+### 4. Specific Objectives
+
+1. To provide a module through which lecturers can manage academic materials and assessments.
+2. To allow lecturers to upload or manage notes, assignments, CATs, and examination information through the LMS.
+3. To allow lecturers to enter and manage marks for assignments, CATs, and examinations.
+4. To allow students to access their registered units and academic scores.
+5. To ensure that units registered by students through the official Student Portal are available in the LMS.
+6. To ensure that marks entered by lecturers in the LMS are reflected in the official Student Portal.
+7. To provide organized storage and management of student and lecturer academic information.
+
+### 5. Stakeholders
+
+The main stakeholders of the system are:
+
+* **Students** – register units and view their registered units and scores.
+* **Lecturers** – manage learning materials, assessments, and student marks.
+* **University Administration** – oversees and manages university academic information.
+* **System Administrators** – maintain and control the information system.
+
+### 6. System Modules
+
+#### 6.1 Lecturer Module
+
+The Lecturer Module allows lecturers to interact with the LMS.
+
+The lecturer should be able to:
+
+* Host or manage lecture notes.
+* Post assignments.
+* Post CATs.
+* Manage examinations.
+* Grade assignments.
+* Grade CATs.
+* Enter examination marks.
+* Manage student academic marks.
+
+#### 6.2 Student Module
+
+The Student Module allows students to interact with the Student Portal and LMS.
+
+The student should be able to:
+
+* Register units through the official Student Portal.
+* View registered units for the current semester.
+* View scores for registered units.
+* Access learning materials and assessments through the LMS.
+* View academic marks.
+
+### 7. Functional Requirements
+
+The system shall:
+
+1. Allow students to register units through the official Student Portal.
+2. Display registered student units in the LMS.
+3. Allow lecturers to manage notes through the LMS.
+4. Allow lecturers to create and manage assignments.
+5. Allow lecturers to create and manage CATs.
+6. Allow lecturers to manage examinations.
+7. Allow lecturers to enter marks through the LMS.
+8. Display marks entered by lecturers in the official Student Portal.
+9. Allow students to view their registered units.
+10. Allow students to view their scores.
+11. Store student academic information.
+12. Store lecturer and academic assessment information.
+
+### 8. Non-Functional Requirements
+
+The system should have the following qualities:
+
+* **Security** – only authorized users should access protected information.
+* **Reliability** – the system should provide accurate and dependable information.
+* **Usability** – students and lecturers should be able to use the system easily.
+* **Performance** – the system should respond to user requests within a reasonable time.
+* **Maintainability** – the system should be easy to update and maintain.
+* **Data integrity** – student units and marks should remain accurate and consistent between the LMS and Student Portal.
+
+### 9. Feasibility Study
+
+#### 9.1 Technical Feasibility
+
+The system is technically feasible because it can be developed using C++ and can use databases or data storage mechanisms to store student, lecturer, unit, and academic information.
+
+#### 9.2 Economic Feasibility
+
+The system can reduce manual work and improve the management of academic information. The benefits of having coordinated student and lecturer information can justify the resources required to develop and maintain the system.
+
+#### 9.3 Operational Feasibility
+
+The system is operationally feasible because students and lecturers already interact with university academic systems. The proposed system improves the coordination between the Student Portal and LMS.
+
+#### 9.4 Organizational Feasibility
+
+The system supports the university's need to manage academic information efficiently and coordinate information between different university systems and users.
+
+### 10. System Scope
+
+The system will focus on:
+
+* Student unit registration information.
+* Student registered units.
+* Student academic scores.
+* Lecturer management of notes.
+* Assignment management.
+* CAT management.
+* Examination information.
+* Entry and management of academic marks.
+* Coordination of information between the Student Portal and LMS.
+
+The system will primarily cover the **Student Module** and **Lecturer Module** described in the given requirements.
+
+### 11. System Inputs
+
+The system will receive information such as:
+
+* Student details.
+* Lecturer details.
+* Unit registration information.
+* Notes and learning materials.
+* Assignment information.
+* CAT information.
+* Examination information.
+* Student marks and scores.
+
+### 12. System Outputs
+
+The system will provide:
+
+* List of registered units.
+* Student scores and academic marks.
+* Learning materials.
+* Assignments and CATs.
+* Examination information.
+* Updated academic results.
+
+### 13. Proposed Information Flow
+
+The proposed system will coordinate information between the Student Portal and LMS.
+
+**Student → Student Portal → Unit Registration → LMS**
+
+The student registers units through the official Student Portal. The registered units should then be available in the LMS.
+
+**Lecturer → LMS → Marks → Student Portal**
+
+The lecturer enters marks through the LMS. The same marks should then be reflected in the official Student Portal where the student can view them.
+
+### 14. Conclusion
+
+The proposed JKUAT Information System will provide a coordinated way of managing student and lecturer academic information. The system will connect the activities of the Student Portal and LMS by ensuring that registered units and academic marks are consistently available where required.
+
+The system will therefore improve the organization, accessibility, and consistency of academic information while meeting the stated requirements.
 
