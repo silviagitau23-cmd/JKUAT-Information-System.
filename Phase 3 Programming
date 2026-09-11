@@ -1,1 +1,287 @@
 
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+// ==================== STUDENT CLASS ====================
+class Student {
+private:
+    string name;
+    string registrationNumber;
+    vector<string> registeredUnits;
+    vector<double> marks;
+
+public:
+    Student(string n, string reg) {
+        name = n;
+        registrationNumber = reg;
+    }
+
+    string getName() {
+        return name;
+    }
+
+    string getRegistrationNumber() {
+        return registrationNumber;
+    }
+
+    void registerUnit(string unit) {
+        registeredUnits.push_back(unit);
+        marks.push_back(-1);
+        cout << "Unit registered successfully.\n";
+    }
+
+    void viewUnits() {
+        cout << "\n--- REGISTERED UNITS ---\n";
+
+        if (registeredUnits.empty()) {
+            cout << "No units registered.\n";
+            return;
+        }
+
+        for (int i = 0; i < registeredUnits.size(); i++) {
+            cout << i + 1 << ". " << registeredUnits[i];
+
+            if (marks[i] == -1)
+                cout << " | Mark: Not yet entered";
+            else
+                cout << " | Mark: " << marks[i];
+
+            cout << endl;
+        }
+    }
+
+    void addMark(int unitNumber, double mark) {
+        if (unitNumber >= 0 && unitNumber < marks.size()) {
+            marks[unitNumber] = mark;
+        }
+    }
+
+    void viewScores() {
+        cout << "\n--- STUDENT SCORES ---\n";
+
+        if (registeredUnits.empty()) {
+            cout << "No units registered.\n";
+            return;
+        }
+
+        for (int i = 0; i < registeredUnits.size(); i++) {
+            cout << registeredUnits[i] << " : ";
+
+            if (marks[i] == -1)
+                cout << "No mark available";
+            else
+                cout << marks[i];
+
+            cout << endl;
+        }
+    }
+};
+
+// ==================== LECTURER CLASS ====================
+class Lecturer {
+private:
+    string name;
+    string lecturerID;
+
+public:
+    Lecturer(string n, string id) {
+        name = n;
+        lecturerID = id;
+    }
+
+    void manageNotes() {
+        cout << "\n--- MANAGE NOTES ---\n";
+        cout << "Notes can be uploaded and managed through the LMS.\n";
+    }
+
+    void manageAssignment() {
+        cout << "\n--- ASSIGNMENTS ---\n";
+        cout << "Assignment has been created on the LMS.\n";
+    }
+
+    void manageCAT() {
+        cout << "\n--- CAT ---\n";
+        cout << "CAT has been created on the LMS.\n";
+    }
+
+    void manageExam() {
+        cout << "\n--- EXAMINATION ---\n";
+        cout << "Examination information has been managed through the LMS.\n";
+    }
+};
+
+// ==================== STUDENT MENU ====================
+void studentMenu(Student &student) {
+
+    int choice;
+
+    do {
+        cout << "\n================================\n";
+        cout << "       STUDENT MODULE\n";
+        cout << "================================\n";
+        cout << "1. Register Unit\n";
+        cout << "2. View Registered Units\n";
+        cout << "3. View Scores\n";
+        cout << "4. View LMS Information\n";
+        cout << "5. Logout\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch (choice) {
+
+        case 1: {
+            string unit;
+            cout << "Enter unit name/code: ";
+            cin.ignore();
+            getline(cin, unit);
+
+            student.registerUnit(unit);
+            break;
+        }
+
+        case 2:
+            student.viewUnits();
+            break;
+
+        case 3:
+            student.viewScores();
+            break;
+
+        case 4:
+            cout << "\n--- LMS INFORMATION ---\n";
+            cout << "Access your notes, assignments, CATs and examinations through the LMS.\n";
+            break;
+
+        case 5:
+            cout << "Logging out...\n";
+            break;
+
+        default:
+            cout << "Invalid choice.\n";
+        }
+
+    } while (choice != 5);
+}
+
+// ==================== LECTURER MENU ====================
+void lecturerMenu(Lecturer &lecturer, Student &student) {
+
+    int choice;
+
+    do {
+        cout << "\n================================\n";
+        cout << "       LECTURER MODULE\n";
+        cout << "================================\n";
+        cout << "1. Manage Notes\n";
+        cout << "2. Manage Assignments\n";
+        cout << "3. Manage CATs\n";
+        cout << "4. Manage Examinations\n";
+        cout << "5. Enter Student Mark\n";
+        cout << "6. View Student Information\n";
+        cout << "7. Logout\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch (choice) {
+
+        case 1:
+            lecturer.manageNotes();
+            break;
+
+        case 2:
+            lecturer.manageAssignment();
+            break;
+
+        case 3:
+            lecturer.manageCAT();
+            break;
+
+        case 4:
+            lecturer.manageExam();
+            break;
+
+        case 5: {
+            int unitNumber;
+            double mark;
+
+            student.viewUnits();
+
+            cout << "\nEnter unit number to enter mark for: ";
+            cin >> unitNumber;
+
+            cout << "Enter mark: ";
+            cin >> mark;
+
+            student.addMark(unitNumber - 1, mark);
+
+            cout << "Mark entered successfully.\n";
+            cout << "The mark is now available for the student to view.\n";
+
+            break;
+        }
+
+        case 6:
+            cout << "\n--- STUDENT INFORMATION ---\n";
+            cout << "Student Name: " << student.getName() << endl;
+            cout << "Registration Number: "
+                 << student.getRegistrationNumber() << endl;
+
+            student.viewUnits();
+            break;
+
+        case 7:
+            cout << "Logging out...\n";
+            break;
+
+        default:
+            cout << "Invalid choice.\n";
+        }
+
+    } while (choice != 7);
+}
+
+// ==================== MAIN PROGRAM ====================
+int main() {
+
+    Student student("Silvia Gitau", "DIT/2025/001");
+    Lecturer lecturer("JKUAT Lecturer", "LEC001");
+
+    int choice;
+
+    cout << "=========================================\n";
+    cout << "       JKUAT INFORMATION SYSTEM\n";
+    cout << "=========================================\n";
+
+    do {
+
+        cout << "\n----------- MAIN MENU -----------\n";
+        cout << "1. Student Login\n";
+        cout << "2. Lecturer Login\n";
+        cout << "3. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch (choice) {
+
+        case 1:
+            studentMenu(student);
+            break;
+
+        case 2:
+            lecturerMenu(lecturer, student);
+            break;
+
+        case 3:
+            cout << "Thank you for using JKUAT Information System.\n";
+            break;
+
+        default:
+            cout << "Invalid choice. Please try again.\n";
+        }
+
+    } while (choice != 3);
+
+    return 0;
+}
